@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⏱️ Timer App</h1>
+        </header>
+        
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="countdown">Countdown Timer</button>
+            <button class="mode-btn" data-mode="stopwatch">Stopwatch</button>
+        </div>
+
+        <!-- Countdown Timer Section -->
+        <div class="timer-section" id="countdown-section">
+            <div class="display">
+                <div class="time-display" id="countdown-display">00:00:00</div>
+            </div>
+            
+            <div class="input-group">
+                <div class="input-field">
+                    <label for="hours">Hours</label>
+                    <input type="number" id="hours" min="0" max="23" value="0">
+                </div>
+                <div class="input-field">
+                    <label for="minutes">Minutes</label>
+                    <input type="number" id="minutes" min="0" max="59" value="5">
+                </div>
+                <div class="input-field">
+                    <label for="seconds">Seconds</label>
+                    <input type="number" id="seconds" min="0" max="59" value="0">
+                </div>
+            </div>
+
+            <div class="quick-timers">
+                <button class="quick-btn" data-time="300">5 min</button>
+                <button class="quick-btn" data-time="600">10 min</button>
+                <button class="quick-btn" data-time="900">15 min</button>
+                <button class="quick-btn" data-time="1800">30 min</button>
+            </div>
+
+            <div class="controls">
+                <button class="control-btn start" id="countdown-start">
+                    <span class="icon">▶</span> Start
+                </button>
+                <button class="control-btn pause" id="countdown-pause" disabled>
+                    <span class="icon">⏸</span> Pause
+                </button>
+                <button class="control-btn reset" id="countdown-reset">
+                    <span class="icon">↺</span> Reset
+                </button>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="countdown-progress"></div>
+            </div>
+        </div>
+
+        <!-- Stopwatch Section -->
+        <div class="timer-section hidden" id="stopwatch-section">
+            <div class="display">
+                <div class="time-display" id="stopwatch-display">00:00:00.00</div>
+            </div>
+
+            <div class="controls">
+                <button class="control-btn start" id="stopwatch-start">
+                    <span class="icon">▶</span> Start
+                </button>
+                <button class="control-btn pause" id="stopwatch-pause" disabled>
+                    <span class="icon">⏸</span> Pause
+                </button>
+                <button class="control-btn reset" id="stopwatch-reset">
+                    <span class="icon">↺</span> Reset
+                </button>
+                <button class="control-btn lap" id="stopwatch-lap" disabled>
+                    <span class="icon">🏁</span> Lap
+                </button>
+            </div>
+
+            <div class="laps" id="laps-container"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
